@@ -12,7 +12,36 @@
     <div class="w-full h-full flex flex-col justify-center items-center ">
     <div id="header" class="w-[90%]"></div>
     <div id="mainPage" class="w-[90%]"></div>
+    <div id="blogPost" class="w-[90%]"></div>
        
 </div>
+
+<script>
+    // Prevent browser from auto-resetting scroll
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Debug: Check if scrollPosition exists in sessionStorage
+        console.log("Saved scroll position:", sessionStorage.getItem("scrollPosition"));
+
+        setTimeout(() => {
+            const scrollPosition = sessionStorage.getItem("scrollPosition");
+            if (scrollPosition !== null) {
+                window.scrollTo(0, Number(scrollPosition));
+                console.log("Restored scroll position to:", scrollPosition);
+            }
+        }, 200); // Delay ensures the content is loaded before scrolling
+    });
+
+    window.addEventListener("beforeunload", function () {
+        // Save scroll position before leaving
+        sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+        console.log("Saving scroll position:", window.scrollY);
+    });
+</script>
+
+
 </body>
 </html>

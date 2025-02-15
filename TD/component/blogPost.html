@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Tabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-content {
+      display: none;
+    }
+  </style>
+</head>
+<body class="flex justify-center">
+  <!-- Blog Post Section -->
+  <section class="mt-5 w-[90%]">
+    <!-- Black link on the top of this section -->
+    <!-- LG Screen Post -->
+    <div class="hidden lg:flex gap-1">
+      <div class="h-2 w-[50%] bg-black"></div>
+      <div class="h-2 w-[30%] bg-black"></div>
+      <div class="h-2 w-[20%] bg-black"></div>
+    </div>
+    <!-- MD and SM Screen -->
+    <div class="flex lg:hidden gap-1">
+      <div class="h-2 w-[50%] bg-black"></div>
+      <div class="h-2 w-[50%] bg-black"></div>
+    </div>
+
+    <!-- Blog Post -->
+    <!-- Blog Post -->
+    <div class="w-full  flex flex-row justify-between mt-8">
+        <div class="w-[60%]">
+          <nav>
+            <div class="container mx-auto border-b-2 border-orange-500 flex justify-between items-center">
+              <!-- Logo -->
+              <a href="#" class="text-white bg-orange-500 py-2 px-4 uppercase">don't miss</a>
+  
+              <!-- Navigation Links (Tabs) -->
+              <ul class="hidden lg:flex lg:space-x-4">
+                <li>
+                    <a href="#" onclick="showTab('all', event)" class="hover:text-gray-200">all</a>
+                </li>
+                <li>
+                  <a href="#" onclick="showTab('cars', event)" class="hover:text-gray-200">Cars</a>
+                </li>
+                <li>
+                  <a href="#" onclick="showTab('electric-cars', event)" class="hover:text-gray-200">Electric cars</a>
+                </li>
+                <li>
+                  <a href="#" onclick="showTab('features', event)" class="hover:text-gray-200">Features</a>
+                </li>
+                <li>
+                  <a href="#" onclick="showTab('gadget', event)" class="hover:text-gray-200">Gadget</a>
+                </li>
+                <li>
+                  <a href="#" onclick="showTab('smart-tvs', event)" class="hover:text-gray-200">Smart TVs</a>
+                </li>
+                <li>
+                  <a href="#" onclick="showTab('more', event)" class="hover:text-gray-200">More</a>
+                </li>
+              </ul>
+  
+              <!-- Mobile Menu Button -->
+              <button id="mobile-menu-button" class="lg:hidden p-2 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+              </button>
+            </div>
+  
+            <!-- Mobile Menu (Hidden by Default) -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4">
+              <ul class="space-y-2">
+                <li><a href="#" onclick="showTab('all', event)" class="block hover:text-gray-200">all</a></li>
+                <li><a href="#" onclick="showTab('cars', event)" class="block hover:text-gray-200">Cars</a></li>
+                <li><a href="#" onclick="showTab('electric-cars', event)" class="block hover:text-gray-200">Electric cars</a></li>
+                <li><a href="#" onclick="showTab('features', event)" class="block hover:text-gray-200">Features</a></li>
+                <li><a href="#" onclick="showTab('gadget', event)" class="block hover:text-gray-200">Gadget</a></li>
+                <li><a href="#" onclick="showTab('smart-tvs', event)" class="block hover:text-gray-200">Smart TVs</a></li>
+                <li><a href="#" onclick="showTab('more', event)" class="block hover:text-gray-200">More</a></li>
+              </ul>
+            </div>
+          </nav>
+  
+          <!-- Tab Content Sections -->
+           <!--the all opt from the tab-->
+          <div class="mt-8 w-full ">
+            <div id="all" class="tab-content block">
+                <div class="w-full mt-10 mb-5  hidden lg:flex  justify-between">
+                    <div class="w-[100%] gap-6 flex justify -between">
+                        <div class="w-[55%] h-[80vh]">
+                            <div class="h-[50%] bg-blue-600">
+                            </div>
+                            <h1 class="py-2">The Top 9 All-Electric Vechile of 2019</h1>
+                    <p class="py-2 font-bold">Amr Ali ibrahim<span class="font-normal px-2">April 05, 2019</span></p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Atque nostrum necessitatibus accusantium, quidem
+                         nulla praesentium in dicta possimus quis pariatur 
+                        placeat nihil mollitia qui cumque velit..</p>
+                        <div class=" flex mt-8 flex-row gap-2">
+                            <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
+                                <i class="fa-solid fa-caret-left"></i>
+                            </div>
+                            <div class="border border-gray-200 text-red-500 p-1 h-fit flex justify-center items-center">
+                                <i class="fa-solid fa-caret-right"></i>
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="w-[40%] h-[80vh]">
+                        <div class="flex justify-between gap-2 mb-4">
+                            <div class="bg-blue-600 h-20 w-60"></div>
+                            <div class="text-center">
+                                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Nam odit consectetur consequuntur voluptatum quisquam, 
+                                    </h1>
+                            </div>
+                        </div>
+    
+                        <div class="flex justify-between gap-2 mb-4">
+                            <div class="bg-blue-600 h-20 w-60"></div>
+                            <div class="text-center">
+                                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Nam odit consectetur consequuntur voluptatum quisquam, 
+                                    </h1>
+                            </div>
+                        </div>
+    
+                        <div class="flex justify-between gap-2 mb-4">
+                            <div class="bg-blue-600 h-20 w-60"></div>
+                            <div class="text-center">
+                                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Nam odit consectetur consequuntur voluptatum quisquam, 
+                                    </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cars" class="tab-content">
+              <h2 class="text-xl font-bold">Cars Content</h2>
+              <p>This is the content for the "Cars" section.</p>
+            </div>
+            <div id="electric-cars" class="tab-content">
+              <h2 class="text-xl font-bold">Electric Cars Content</h2>
+              <p>This is the content for the "Electric Cars" section.</p>
+            </div>
+            <div id="features" class="tab-content">
+              <h2 class="text-xl font-bold">Features Content</h2>
+              <p>This is the content for the "Features" section.</p>
+            </div>
+            <div id="gadget" class="tab-content">
+              <h2 class="text-xl font-bold">Gadget Content</h2>
+              <p>This is the content for the "Gadget" section.</p>
+            </div>
+            <div id="smart-tvs" class="tab-content">
+              <h2 class="text-xl font-bold">Smart TVs Content</h2>
+              <p>This is the content for the "Smart TVs" section.</p>
+            </div>
+            <div id="more" class="tab-content">
+              <h2 class="text-xl font-bold">More Content</h2>
+              <p>This is the content for the "More" section.</p>
+            </div>
+          </div>
+
+          <div class="w-[30%] ">
+            <div class="w-full h-10 border border-black-2 p-2 flex justify-between">
+                <div class="flex gap-2 ">
+                 <i class="fa-brands fa-facebook"></i>
+                 <div class="h-6 w-0.5 bg-black"></div>
+                 <div>2 Fans</div>
+                </div>
+                <div class="flex gap-2">
+                 <div class="h-6 w-0.5 bg-black"></div>
+                 <p>like</p>
+                </div>
+             </div>
+
+
+             <div class="mt-10">
+                 <p class="text-center">-Advertisment-</p>
+                 <div class="w-full h-[40vh]  relative bg-red-500">
+                 </div>
+             </div>
+
+             <div class="w-full mt-10  border-b-2 border-black flex justify-between">
+                 <h1 class="py-1 px-4 h-auto w-auto bg-black uppercase text-white">popular post</h1>
+             </div>
+         </div>
+        </div>
+  
+       
+        </div>
+      </div>
+  </section>
+    
+  <script>
+   function showTab(tabId, event) {
+  event.preventDefault(); // Prevent default anchor behavior
+  
+  // Hide all tab content sections
+  document.querySelectorAll('.tab-content').forEach(content => {
+    content.style.display = 'none';
+  });
+
+  // Show the selected tab content section
+  const selectedTab = document.getElementById(tabId);
+  if (selectedTab) {
+    selectedTab.style.display = 'block';
+  }
+}
+  </script>
+</body>
+</html>

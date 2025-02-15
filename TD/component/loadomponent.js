@@ -8,5 +8,6 @@ function loadComponent(id, file) {
 document.addEventListener("DOMContentLoaded", () => {
   loadComponent("header", "component/header.html");
   loadComponent("mainPage", "component/mainPage.html");
+  loadComponent("blogPost", "component/blogPost.html");
   loadComponent("footer", "component/footer.html");
 });
