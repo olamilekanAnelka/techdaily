@@ -4,44 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind in HTML</title>
+  
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <script src="./component/loadomponent.js" defer></script>
 </head>
 <body>
-    <div class="w-full h-full flex flex-col justify-center items-center ">
-    <div id="header" class="w-[90%]"></div>
-    <div id="mainPage" class="w-[90%]"></div>
-    <div id="blogPost" class="w-[90%]"></div>
-       
-</div>
+    <div class="w-full h-full flex flex-col justify-center items-center">
+        <!-- Header Section -->
+        <div id="header" class="w-[90%]">
+            <header class="bg-white text-black">
+                <!-- Large Screens: Full Header -->
+                <div class="hidden lg:block">
+                    <div class="flex justify-between mt-4 gap-8">
+                        <h1 class="text-xl gap-8 pl-[5rem]">
+                            Tech <span class="font-bold text-blue-400">TD</span> Daily
+                        </h1>
+                        <!-- Black Section -->
+                        <div class="w-[50rem] h-full p-4 bg-black text-white flex justify-around">
+                            <div>
+                                <h3>
+                                    Best selling <span class="font-bold uppercase">Blog</span> and
+                                    <span class="font-bold uppercase">Magazine</span>
+                                </h3>
+                                <p>Theme of All Time</p>
+                                <p class="text-blue-400">Experience the change!</p>
+                            </div>
+                            <button class="bg-black border border-white h-[3rem] px-4 m-4 uppercase">
+                                Buy now <i class="fa-solid fa-arrow-right text-white p-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Full Navbar -->
+                    <div class="flex justify-between py-4">
+                        <ul class="flex space-x-2 uppercase list-none p-0 m-0 font-bold">
+                            <li>tech daily</li>
+                            <li>gadget <i class="fa-solid fa-caret-down"></i></li>
+                            <li>electric cars <i class="fa-solid fa-caret-down"></i></li>
+                            <li>websites <i class="fa-solid fa-caret-down"></i></li>
+                            <li>smart tvs</li>
+                            <li>contact us</li>
+                        </ul>
+                        <div><i class="fa-solid fa-magnifying-glass"></i></div>
+                    </div>
+                </div>
+                <!-- Medium & Small Screens: Mobile Header -->
+                <div class="lg:hidden flex justify-between items-center px-4 py-4">
+                    <h1 class="text-xl font-bold">
+                        Tech <span class="text-blue-400">TD</span> Daily
+                    </h1>
+                    <!-- Menu Toggle Button -->
+                    <button id="menu-toggle" class="text-2xl text-black">
+                        <i id="menu-icon" class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <!-- Mobile Menu (Hidden by Default) -->
+                <nav id="mobile-menu" class="hidden lg:hidden flex flex-col items-center shadow-md py-4">
+                    <ul class="space-y-4 uppercase font-bold">
+                        <li>tech daily</li>
+                        <li>gadget <i class="fa-solid fa-caret-down"></i></li>
+                        <li>electric cars <i class="fa-solid fa-caret-down"></i></li>
+                        <li>websites <i class="fa-solid fa-caret-down"></i></li>
+                        <li>smart tvs</li>
+                        <li>contact us</li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
 
-<script>
-    // Prevent browser from auto-resetting scroll
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
+        <!-- Main Page Section -->
+        <div id="mainPage" class="w-[90%]">
+            <section class="w-full">
+                <div class="flex justify-between py-8 px-2 border-t">
+                    <div class="text-3l flex flex-col lg:flex-row">
+                        <div class="bg-black text-white p-2 w-fit">trending now</div>
+                        <p class="p-2">the top 9 of All-electric Vechile of 2019</p>
+                    </div>
+                    <div class="flex flex-row gap-2">
+                        <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
+                            <i class="fa-solid fa-caret-left"></i>
+                        </div>
+                        <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
+                            <i class="fa-solid fa-caret-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Four Boxes for Large Screens -->
+                <div class="hidden lg:flex w-[100%] h-[70vh] gap-1">
+                    <!-- First Box -->
+                    <div class="w-[50%] flex flex-col">
+                        <div class="h-[60%] bg-blue-600"></div>
+                        <div class="h-[40%] bg-gray-300 flex flex-col p-4 justify-center">
+                            <div class="bg-black text-white p-2 w-fit uppercase text-[10px]">Social networking</div>
+                            <h1>Facebook announces dating features similar to Tinder</h1>
+                            <p>Amr Ali Ibrahim</p>
+                            <p>April 05, 2019</p>
+                        </div>
+                    </div>
+                    <!-- Second and Third Boxes -->
+                    <div class="w-[50%] flex flex-col gap-1">
+                        <div class="h-[50%] bg-[url('../Assets/1.jpg')] bg-cover bg-center"></div>
+                        <div class="h-[50%] flex flex-row gap-1">
+                            <div class="w-[50%] bg-[url('../Assets/1.jpg')] bg-cover bg-center"></div>
+                            <div class="w-[50%] bg-[url('../Assets/2.jpg')] bg-cover bg-center"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Boxes for Medium & Small Screens -->
+                <div class="flex lg:hidden flex-col w-full h-screen gap-2">
+                    <div class="h-[35%] bg-blue-600">
+                        <div class="h-[30%] bg-blue-600"></div>
+                        <div class="h-[70%] bg-gray-300 flex flex-col p-4 justify-center">
+                            <div class="bg-black text-white p-2 w-fit uppercase text-[10px]">Social networking</div>
+                            <h1>Facebook announces dating features similar to Tinder</h1>
+                            <p>Amr Ali Ibrahim</p>
+                            <p>April 05, 2019</p>
+                        </div>
+                    </div>
+                    <div class="h-[21.6%] bg-[url('../Assets/2.jpg')] bg-cover bg-center"></div>
+                    <div class="h-[21.6%] bg-[url('../Assets/1.jpg')] bg-cover bg-center"></div>
+                    <div class="h-[21.6%] bg-[url('../Assets/2.jpg')] bg-cover bg-center"></div>
+                </div>
+            </section>
+        </div>
 
-    document.addEventListener("DOMContentLoaded", function () {
-        // Debug: Check if scrollPosition exists in sessionStorage
-        console.log("Saved scroll position:", sessionStorage.getItem("scrollPosition"));
+        <!-- Blog Post Section -->
+        <div id="blogPost" class="w-[90%]">
+            <section class="mt-5">
+                <!-- Black Links -->
+                <div class="hidden lg:flex gap-1">
+                    <div class="h-2 w-[50%] bg-black"></div>
+                    <div class="h-2 w-[30%] bg-black"></div>
+                    <div class="h-2 w-[20%] bg-black"></div>
+                </div>
+                <div class="flex lg:hidden gap-1">
+                    <div class="h-2 w-[50%] bg-black"></div>
+                    <div class="h-2 w-[50%] bg-black"></div>
+                </div>
+                <!-- Blog Content -->
+                <div class="w-full flex flex-row justify-between mt-8">
+                    <div class="w-[60%]">
+                        <nav>
+                            <div class="container mx-auto border-b-2 border-orange-500 flex justify-between items-center">
+                                <a href="#" class="text-white bg-orange-500 py-2 px-4 uppercase">don't miss</a>
+                                <ul class="hidden lg:flex lg:space-x-4">
+                                    <li><a href="#" onclick="showTab('all', event)" class="hover:text-gray-200">all</a></li>
+                                    <li><a href="#" onclick="showTab('cars', event)" class="hover:text-gray-200">Cars</a></li>
+                                    <li><a href="#" onclick="showTab('electric-cars', event)" class="hover:text-gray-200">Electric cars</a></li>
+                                    <li><a href="#" onclick="showTab('features', event)" class="hover:text-gray-200">Features</a></li>
+                                    <li><a href="#" onclick="showTab('gadget', event)" class="hover:text-gray-200">Gadget</a></li>
+                                    <li><a href="#" onclick="showTab('smart-tvs', event)" class="hover:text-gray-200">Smart TVs</a></li>
+                                    <li><a href="#" onclick="showTab('more', event)" class="hover:text-gray-200">More</a></li>
+                                </ul>
+                                <button id="mobile-menu-button" class="lg:hidden p-2 focus:outline-none">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </nav>
+                        <!-- Tab Content -->
+                        <div class="mt-8 w-full">
+                            <div id="all" class="tab-content block">
+                                <!-- Content for "All" Tab -->
+                            </div>
+                            <div id="cars" class="tab-content hidden">Cars Content</div>
+                            <div id="electric-cars" class="tab-content hidden">Electric Cars Content</div>
+                            <div id="features" class="tab-content hidden">Features Content</div>
+                            <div id="gadget" class="tab-content hidden">Gadget Content</div>
+                            <div id="smart-tvs" class="tab-content hidden">Smart TVs Content</div>
+                            <div id="more" class="tab-content hidden">More Content</div>
+                        </div>
+                    </div>
+                    <div class="w-[30%]">
+                        <!-- Sidebar Content -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 
-        setTimeout(() => {
-            const scrollPosition = sessionStorage.getItem("scrollPosition");
-            if (scrollPosition !== null) {
-                window.scrollTo(0, Number(scrollPosition));
-                console.log("Restored scroll position to:", scrollPosition);
+    <script>
+        function showTab(tabId, event) {
+            event.preventDefault();
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
             }
-        }, 200); // Delay ensures the content is loaded before scrolling
-    });
-
-    window.addEventListener("beforeunload", function () {
-        // Save scroll position before leaving
-        sessionStorage.setItem("scrollPosition", window.scrollY.toString());
-        console.log("Saving scroll position:", window.scrollY);
-    });
-</script>
-
-
+        }
+    </script>
 </body>
 </html>
