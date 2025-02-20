@@ -1,8 +1,13 @@
 <!--style for the tab and nav-->
 <style>
-    .tab-content {
-      display: none;
-    }
+  /* Original Section */
+  .tab-content, .lifestyle-tab-content {
+  display: none;
+}
+
+.tab-content.block, .lifestyle-tab-content.block {
+  display: block;
+}
   </style>
   <section class="flex flex-col justify-center w-full items-center">
   <header class="bg-white text-black w-[90%]">
@@ -161,7 +166,7 @@
 
         
  <!-- Blog Post Section -->
- <section class="mt-5 w-[90%]">
+ <section class="mt-5 w-[90%] ">
     <!-- Black link on the top of this section -->
     <!-- LG Screen Post -->
     <div class="hidden lg:flex gap-1">
@@ -177,8 +182,8 @@
 
     <!-- Blog Post -->
     <!-- Blog Post -->
-    <div class="w-full  flex flex-row justify-between mt-8">
-        <div class="w-[60%]">
+    <div class="w-full flex flex-col lg:flex-row justify-between mt-8">
+        <div class="w-full lg:w-[60%]">
           <nav>
             <div class="container mx-auto border-b-2 border-orange-500 flex justify-between items-center">
               <!-- Logo -->
@@ -186,27 +191,13 @@
   
               <!-- Navigation Links (Tabs) -->
               <ul class="hidden lg:flex lg:space-x-4">
-                <li>
-                    <a href="#" onclick="showTab('all', event)" class="hover:text-gray-200">all</a>
-                </li>
-                <li>
-                  <a href="#" onclick="showTab('cars', event)" class="hover:text-gray-200">Cars</a>
-                </li>
-                <li>
-                  <a href="#" onclick="showTab('electric-cars', event)" class="hover:text-gray-200">Electric cars</a>
-                </li>
-                <li>
-                  <a href="#" onclick="showTab('features', event)" class="hover:text-gray-200">Features</a>
-                </li>
-                <li>
-                  <a href="#" onclick="showTab('gadget', event)" class="hover:text-gray-200">Gadget</a>
-                </li>
-                <li>
-                  <a href="#" onclick="showTab('smart-tvs', event)" class="hover:text-gray-200">Smart TVs</a>
-                </li>
-                <li>
-                  <a href="#" onclick="showTab('more', event)" class="hover:text-gray-200">More</a>
-                </li>
+                <li><a href="#" data-tab="all" onclick="showTab('all', event)" class="hover:text-gray-200">all</a></li>
+                <li><a href="#" data-tab="cars" onclick="showTab('cars', event)" class="hover:text-gray-200">Cars</a></li>
+                <li><a href="#" data-tab="electric-cars" onclick="showTab('electric-cars', event)" class="hover:text-gray-200">Electric cars</a></li>
+                <li><a href="#" data-tab="features" onclick="showTab('features', event)" class="hover:text-gray-200">Features</a></li>
+                <li><a href="#" data-tab="gadget" onclick="showTab('gadget', event)" class="hover:text-gray-200">Gadget</a></li>
+                <li><a href="#" data-tab="smart-tvs" onclick="showTab('smart-tvs', event)" class="hover:text-gray-200">Smart TVs</a></li>
+                <li><a href="#" data-tab="more" onclick="showTab('more', event)" class="hover:text-gray-200">More</a></li>
               </ul>
   
               <!-- Mobile Menu Button -->
@@ -219,14 +210,14 @@
   
             <!-- Mobile Menu (Hidden by Default) -->
             <div id="mobile-menu" class="lg:hidden hidden mt-4">
-              <ul class="space-y-2">
-                <li><a href="#" onclick="showTab('all', event)" class="block hover:text-gray-200">all</a></li>
-                <li><a href="#" onclick="showTab('cars', event)" class="block hover:text-gray-200">Cars</a></li>
-                <li><a href="#" onclick="showTab('electric-cars', event)" class="block hover:text-gray-200">Electric cars</a></li>
-                <li><a href="#" onclick="showTab('features', event)" class="block hover:text-gray-200">Features</a></li>
-                <li><a href="#" onclick="showTab('gadget', event)" class="block hover:text-gray-200">Gadget</a></li>
-                <li><a href="#" onclick="showTab('smart-tvs', event)" class="block hover:text-gray-200">Smart TVs</a></li>
-                <li><a href="#" onclick="showTab('more', event)" class="block hover:text-gray-200">More</a></li>
+              <ul class="hidden lg:flex lg:space-x-4">
+                <li><a href="#" data-tab="all123" onclick="showTab123('all123', event)" class="hover:text-gray-200">all</a></li>
+                <li><a href="#" data-tab="cars123" onclick="showTab123('cars123', event)" class="hover:text-gray-200">Cars</a></li>
+                <li><a href="#" data-tab="electric-cars123" onclick="showTab123('electric-cars123', event)" class="hover:text-gray-200">Electric cars</a></li>
+                <li><a href="#" data-tab="features123" onclick="showTab123('features123', event)" class="hover:text-gray-200">Features</a></li>
+                <li><a href="#" data-tab="gadget123" onclick="showTab123('gadget123', event)" class="hover:text-gray-200">Gadget</a></li>
+                <li><a href="#" data-tab="smart-tvs123" onclick="showTab123('smart-tvs123', event)" class="hover:text-gray-200">Smart TVs</a></li>
+                <li><a href="#" data-tab="more123" onclick="showTab123('more123', event)" class="hover:text-gray-200">More</a></li>
               </ul>
             </div>
           </nav>
@@ -236,7 +227,7 @@
           <div class="mt-8 w-full ">
             <div id="all" class="tab-content block">
                 <div class="w-full mt-10 mb-5  hidden lg:flex  justify-between">
-                    <div class="w-[100%] gap-6 flex justify -between">
+                    <div class="w-[100%] gap-6 flex justify-between">
                         <div class="w-[55%] h-[80vh]">
                             <div class="h-[50%] bg-blue-600">
                             </div>
@@ -310,11 +301,11 @@
             </div>
             <div id="more" class="tab-content">
               <h2 class="text-xl font-bold">More Content</h2>
-              <p>This is the content for the "More" section.</p>
+              <p>This is the content for' the "More" section.</p>
             </div>
           </div>
 
-          <div class="w-[30%] ">
+          <div class="w-full lg:w-[30%] ">
             <div class="w-full h-10 border border-black-2 p-2 flex justify-between">
                 <div class="flex gap-2 ">
                  <i class="fa-brands fa-facebook"></i>
@@ -334,9 +325,7 @@
                  </div>
              </div>
 
-             <div class="w-full mt-10  border-b-2 border-black flex justify-between">
-                 <h1 class="py-1 px-4 h-auto w-auto bg-black uppercase text-white">popular post</h1>
-             </div>
+             
          </div>
         </div>
   
@@ -344,8 +333,140 @@
         </div>
       </div>
   </section>
+
+
+  <!--the  lifestyle news with the tab and nav-->
+  <section class="flex flex-row w-[90%] justify-between">
+    <div class="w-[60%] flex flex-col  lg:flex-row justify-between mt-8">
+      <div class="w-full">
+        <nav>
+          <div class="container mx-auto border-b-2 border-green-500 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-white bg-green-500 py-2 px-4 uppercase">lifestle news</a>
+    
+            <!-- Navigation Links (Tabs) -->
+            <ul class="hidden lg:flex lg:space-x-4">
+              <li><a href="#" onclick="showTab123('all123', event)" class="hover:text-gray-200">all</a></li>
+              <li><a href="#" onclick="showTab123('cars123', event)" class="hover:text-gray-200">Cars</a></li>
+              <li><a href="#" onclick="showTab123('electric-cars123', event)" class="hover:text-gray-200">Electric cars</a></li>
+              <li><a href="#" onclick="showTab123('features123', event)" class="hover:text-gray-200">Features</a></li>
+              <li><a href="#" onclick="showTab123('gadget123', event)" class="hover:text-gray-200">Gadget</a></li>
+              <li><a href="#" onclick="showTab123('smart-tvs123', event)" class="hover:text-gray-200">Smart TVs</a></li>
+              <li><a href="#" onclick="showTab123('more123', event)" class="hover:text-gray-200">More</a></li>
+            </ul>
+          </div>
+        </nav>
+    
+        <!-- Tab Content Sections of -->
+        <div class="mt-8 w-full">
+          <!--the all content of the lifestyle -->
+          <div id="all123" class="lifestyle-tab-content block">
+           <div class="flex gap-4 flex-row">
+             <div class="w-1/2 flex flex-col">
+              <div class="w-full bg-blue-600 h-60"></div>
+              <h1 class="mt-2 font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Error adipisci, aliquam qui atque porro harum sit .</h1>
+                 <p class="mt-2">Amr Ali Ibrahim<span>April 05, 2019</span></p>
+
+              <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                 Consequatur suscipit fugiat aut, ipsam, iure mollitia, 
+                 repudiandae modi dolorum eligendi cum ?</p>
+
+                 <div class="mt-10 flex flex-row gap-4">
+                  <div class="w-[30%] h-20 bg-gray-300"></div>
+                  <div class="w-[60%]">
+                    <h1 class="font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                      <p>April 05, 2019</p>
+                  </div>
+                 </div>
+             </div>
+             <div class="w-1/2 flex flex-col">
+              <div class="w-full bg-red-600 h-60"></div>
+              <h1 class="mt-2 font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Error adipisci, aliquam qui atque porro harum sit .</h1>
+                 <p class="mt-2">Amr Ali Ibrahim<span>April 05, 2019</span></p>
+
+              <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                 Consequatur suscipit fugiat aut, ipsam, iure mollitia, 
+                 repudiandae modi dolorum eligendi cum ?</p>
+
+                 <div class="mt-10 flex flex-row gap-4">
+                  <div class="w-[30%] h-20 bg-gray-300"></div>
+                  <div class="w-[60%]">
+                    <h1 class="font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                      <p>April 05, 2019</p>
+                  </div>
+                 </div>
+             </div>
+           </div>
+          </div>
+          <div id="cars123" class="lifestyle-tab-content">
+            <h2 class="text-xl font-bold">Cars Content</h2>
+            <p>This is the duplicated content for "Cars" section.</p>
+          </div>
+          <div id="electric-cars123" class="lifestyle-tab-content">
+            <h2 class="text-xl font-bold">Electric Cars Content</h2>
+            <p>This is the duplicated content for "Electric Cars" section.</p>
+          </div>
+          <div id="features123" class="lifestyle-tab-content">
+            <h2 class="text-xl font-bold">Electric Cars Content</h2>
+            <p>This is the duplicated content for "Electric Cars" section.</p>
+          </div>
+          <div id="gadget123" class="lifestyle-tab-content">
+            <h2 class="text-xl font-bold">Electric Cars Content</h2>
+            <p>This is the duplicated content for "Electric Cars" section.</p>
+          </div>
+          <div id="smart-tvs123" class="lifestyle-tab-content">
+            <h2 class="text-xl font-bold">Electric Cars Content</h2>
+            <p>This is the duplicated content for "Electric Cars" section.</p>
+          </div>
+          <div id="more123" class="lifestyle-tab-content">
+            <h2 class="text-xl font-bold">Electric Cars Content</h2>
+            <p>This is the duplicated content for "Electric Cars" section.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[30%] ">
+      <div class="w-full mt-10  border-b-2 border-black flex justify-between">
+        <h1 class="py-1 px-4 h-auto w-auto bg-black uppercase text-white">popular post</h1>
+        
+      </div>
+      <div class="container mx-auto">
+        <!-- Flex Container -->
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4">
+          <!-- Box 1 -->
+          <div class=" bg-blue-500 p-8 ">
+            <h2 class="text-white text-xl font-bold">Box 1</h2>
+            <p class="text-white mt-2">This is the top left box.</p>
+          </div>
+    
+          <!-- Box 2 -->
+          <div class=" bg-green-500 p-8 ">
+            <h2 class="text-white text-xl font-bold">Box 2</h2>
+            <p class="text-white mt-2">This is the top right box.</p>
+          </div>
+    
+          <!-- Box 3 -->
+          <div class=" bg-yellow-500 p-8 ">
+            <h2 class="text-white text-xl font-bold">Box 3</h2>
+            <p class="text-white mt-2">This is the bottom left box.</p>
+          </div>
+    
+          <!-- Box 4 -->
+          <div class=" bg-red-500 p-8 ">
+            <h2 class="text-white text-xl font-bold">Box 4</h2>
+            <p class="text-white mt-2">This is the bottom right box.</p>
+          </div>
+        </div>
+      </div>
+
       
 
+   </div>
+    
+</section>
 
   </section>
     
@@ -353,18 +474,45 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
- function showTab(tabId, event) {
-event.preventDefault(); // Prevent default anchor behavior
+// Function to show/hide tabs for the main blog post section
+function showTab(tabId, event) {
+  event.preventDefault();
+  // Hide all tab contents
+  document.querySelectorAll('.tab-content').forEach(tab => {
+    tab.classList.remove('block');
+    tab.classList.add('hidden');
+  });
+  // Show the selected tab content
+  document.getElementById(tabId).classList.remove('hidden');
+  document.getElementById(tabId).classList.add('block');
+}
 
-// Hide all tab content sections
-document.querySelectorAll('.tab-content').forEach(content => {
-  content.style.display = 'none';
+// Function to show/hide tabs for the lifestyle news section
+function showTab123(tabId, event) {
+  event.preventDefault();
+  // Hide all lifestyle tab contents
+  document.querySelectorAll('.lifestyle-tab-content').forEach(tab => {
+    tab.classList.remove('block');
+    tab.classList.add('hidden');
+  });
+  // Show the selected lifestyle tab content
+  document.getElementById(tabId).classList.remove('hidden');
+  document.getElementById(tabId).classList.add('block');
+}
+
+// Add event listeners for the main blog post section tabs
+document.querySelectorAll('.tab-button').forEach(button => {
+  button.addEventListener('click', function(event) {
+    const tabId = this.getAttribute('data-tab');
+    showTab(tabId, event);
+  });
 });
 
-// Show the selected tab content section
-const selectedTab = document.getElementById(tabId);
-if (selectedTab) {
-  selectedTab.style.display = 'block';
-}
-}
+// Add event listeners for the lifestyle news section tabs
+document.querySelectorAll('.lifestyle-tab-button').forEach(button => {
+  button.addEventListener('click', function(event) {
+    const tabId = this.getAttribute('data-tab');
+    showTab123(tabId, event);
+  });
+});
 </script>
