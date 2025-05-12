@@ -1,43 +1,70 @@
-<!--style for the tab and nav-->
-<style>
-  /* Original Section */
-  .tab-content, .lifestyle-tab-content {
-  display: none;
-}
+  <!--style for the tab and nav-->
+  <style>
+    /* Original Section */
+    .tab-content, .lifestyle-tab-content {
+    display: none;
+  }
 
-.tab-content.block, .lifestyle-tab-content.block {
-  display: block;
-}
-  </style>
-  <section class="flex flex-col justify-center w-full items-center">
-  <header class="bg-white text-black w-[90%]">
-    <!-- Large Screens: Full Header -->
-    <div class="hidden lg:block">
-      <div class="flex justify-between mt-4 gap-8">
-        <h1 class="text-xl gap-8 pl-[5rem]">
-          Tech <span class="font-bold text-blue-400">TD</span> Daily
-        </h1>
-  
-        <!-- Black Section -->
-        <div class="w-[50rem] h-full p-4 bg-black text-white flex justify-around">
-          <div>
-            <h3>
-              Best selling <span class="font-bold uppercase">Blog</span> and
-              <span class="font-bold uppercase">Magazine</span>
-            </h3>
-            <p>Theme of All Time</p>
-            <p class="text-blue-400">Experience the change!</p>
+  .tab-content.block, .lifestyle-tab-content.block {
+    display: block;
+  }
+    </style>
+    <section class="flex flex-col justify-center w-full items-center">
+    <header class="bg-white text-black w-[90%]">
+      <!-- Large Screens: Full Header -->
+      <div class="hidden lg:block">
+        <div class="flex justify-between mt-4 gap-8">
+          <h1 class="text-xl gap-8 pl-[5rem]">
+            Tech <span class="font-bold text-blue-400">TD</span> Daily
+          </h1>
+    
+          <!-- Black Section -->
+          <div class="w-[50rem] h-full p-4 bg-black text-white flex justify-around">
+            <div>
+              <h3>
+                Best selling <span class="font-bold uppercase">Blog</span> and
+                <span class="font-bold uppercase">Magazine</span>
+              </h3>
+              <p>Theme of All Time</p>
+              <p class="text-blue-400">Experience the change!</p>
+            </div>
+    
+            <button class="bg-black border border-white h-[3rem] px-4 m-4 uppercase">
+              Buy now <i class="fa-solid fa-arrow-right text-white p-2"></i>
+            </button>
           </div>
-  
-          <button class="bg-black border border-white h-[3rem] px-4 m-4 uppercase">
-            Buy now <i class="fa-solid fa-arrow-right text-white p-2"></i>
-          </button>
+        </div>
+    
+        <!-- Full Navbar -->
+        <div class="flex justify-between py-4">
+          <ul class="flex space-x-2 uppercase list-none p-0 m-0 font-bold">
+            <li>tech daily</li>
+            <li>gadget <i class="fa-solid fa-caret-down"></i></li>
+            <li>electric cars <i class="fa-solid fa-caret-down"></i></li>
+            <li>websites <i class="fa-solid fa-caret-down"></i></li>
+            <li>smart tvs</li>
+            <li>contact us</li>
+          </ul>
+    
+          <div><i class="fa-solid fa-magnifying-glass"></i></div>
         </div>
       </div>
-  
-      <!-- Full Navbar -->
-      <div class="flex justify-between py-4">
-        <ul class="flex space-x-2 uppercase list-none p-0 m-0 font-bold">
+    
+      <!-- Medium & Small Screens: Mobile Header -->
+      <div class="lg:hidden flex justify-between items-center px-4 py-4">
+        <h1 class="text-xl font-bold">
+          Tech <span class="text-blue-400">TD</span> Daily
+        </h1>
+    
+        <!-- Menu Toggle Button -->
+        <button id="menu-toggle" class="text-2xl text-black">
+          <i id="menu-icon" class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    
+      <!-- Mobile Menu (Hidden by Default) -->
+      <nav id="mobile-menu" class="hidden lg:hidden flex flex-col items-center shadow-md py-4">
+        <ul class="space-y-4 uppercase font-bold">
           <li>tech daily</li>
           <li>gadget <i class="fa-solid fa-caret-down"></i></li>
           <li>electric cars <i class="fa-solid fa-caret-down"></i></li>
@@ -45,421 +72,389 @@
           <li>smart tvs</li>
           <li>contact us</li>
         </ul>
-  
-        <div><i class="fa-solid fa-magnifying-glass"></i></div>
+      </nav>
+    
+      <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+    
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          
+          // Toggle between bars and X icons
+          if (mobileMenu.classList.contains("hidden")) {
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+          } else {
+            menuIcon.classList.remove("fa-bars");
+            menuIcon.classList.add("fa-xmark");
+          }
+        });
+      </script>
+    </header>
+    
+    <!--the homepage -->
+  <section class="w-[90%]">
+  <div class="flex justify-between py-8 px-2 border-t ">
+      <div class="text-3l  flex flex-col lg:flex-row">
+      <div class=" bg-black text-white p-2 w-fit">trending now</div>
+      <p class="p-2">the top 9 of All-electric Vechile of 2019</p>
       </div>
-    </div>
-  
-    <!-- Medium & Small Screens: Mobile Header -->
-    <div class="lg:hidden flex justify-between items-center px-4 py-4">
-      <h1 class="text-xl font-bold">
-        Tech <span class="text-blue-400">TD</span> Daily
-      </h1>
-  
-      <!-- Menu Toggle Button -->
-      <button id="menu-toggle" class="text-2xl text-black">
-        <i id="menu-icon" class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-  
-    <!-- Mobile Menu (Hidden by Default) -->
-    <nav id="mobile-menu" class="hidden lg:hidden flex flex-col items-center shadow-md py-4">
-      <ul class="space-y-4 uppercase font-bold">
-        <li>tech daily</li>
-        <li>gadget <i class="fa-solid fa-caret-down"></i></li>
-        <li>electric cars <i class="fa-solid fa-caret-down"></i></li>
-        <li>websites <i class="fa-solid fa-caret-down"></i></li>
-        <li>smart tvs</li>
-        <li>contact us</li>
-      </ul>
-    </nav>
-  
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuIcon = document.getElementById("menu-icon");
-  
-      menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+      <div class=" flex flex-row gap-2">
+          <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
+              <i class="fa-solid fa-caret-left"></i>
+          </div>
+          <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
+              <i class="fa-solid fa-caret-right"></i>
+          </div>
+      </div>
+  </div>
+
+  <div class="">
+      <!--four boxes on the main pages this section is for lg screen only  -->
+      <div class="hidden lg:flex w-[100%] h-[70vh] gap-1">
+
+          <!--the first box on the main page -->
+          <div class="w-[50%] flex flex-col">
+          <div class="h-[60%] bg-blue-600">
+              
+          </div>
+          <div class="h-[40%] bg-gray-300 flex flex-col p-4 flex justify-center">
+              <div class=" bg-black text-white p-2 w-fit uppercase text-[10px]"> Social networking</div>
+              <h1>Facebook announces dating features similar to Tinder</h1>
+              <p>Amr Ali ibrahim</p>
+              <p>April 05, 2019</p>
+          </div>
+        </div>
+          <div class="w-[50%] flex flex-col gap-1 ">
+              <div class="h-[50%]  relative bg-[url('../Assets/1.jpg')] bg-cover bg-center">
+
+              </div>
+              <div class="h-[50%] flex flex-row gap-1">
+                <div class="w-[50%]  relative bg-[url('../Assets/1.jpg')] bg-cover bg-center" ></div>
+                <div class="w-[50%]  relative bg-[url('../Assets/2.jpg')] bg-cover bg-center" ></div>
+              </div>
+          </div> 
+      </div>
+
+
+        <!--this style is for md and sm screen-->
+        <div class="flex lg:hidden flex-col w-full h-screen gap-2">
+          <!-- First Box -->
+          <div class="h-[35%] bg-blue-600">
+              <div class="h-[30%] bg-blue-600"></div>
+              <div class="h-[70%] bg-gray-300 flex flex-col p-4 justify-center">
+                  <div class="bg-black text-white p-2 w-fit uppercase text-[10px]"> Social networking</div>
+                  <h1>Facebook announces dating features similar to Tinder</h1>
+                  <p>Amr Ali Ibrahim</p>
+                  <p>April 05, 2019</p>
+              </div>
+          </div>
+      
+          <!-- Second Box -->
+          <div class="h-[21.6%] bg-cover bg-center bg-[url('../Assets/2.jpg')]"></div>
+      
+          <!-- Third Box -->
+          <div class="h-[21.6%] bg-cover bg-center bg-[url('../Assets/1.jpg')]"></div>
+      
+          <!-- Fourth Box -->
+          <div class="h-[21.6%] bg-cover bg-center bg-[url('../Assets/2.jpg')]"></div>
+      </div>
+      </div>
+      </section>
+
+          
+  <!-- Blog Post Section -->
+  <section class="mt-5 w-[90%] ">
+      <!-- Black link on the top of this section -->
+      <!-- LG Screen Post -->
+      <div class="hidden lg:flex gap-1">
+        <div class="h-2 w-[50%] bg-black"></div>
+        <div class="h-2 w-[30%] bg-black"></div>
+        <div class="h-2 w-[20%] bg-black"></div>
+      </div>
+      <!-- MD and SM Screen -->
+      <div class="flex lg:hidden gap-1">
+        <div class="h-2 w-[50%] bg-black"></div>
+        <div class="h-2 w-[50%] bg-black"></div>
+      </div>
+
+      <!-- Blog Post -->
+      <!-- Blog Post -->
+      <div class="w-full flex flex-col lg:flex-row justify-between mt-8">
+          <div class="w-full lg:w-[60%]">
+            <nav>
+              <div class="container mx-auto border-b-2 border-orange-500 flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-white bg-orange-500 py-2 px-4 uppercase">don't miss</a>
+    
+                <!-- Navigation Links (Tabs) -->
+                <ul class="flex flex-wrap space-x-2 text-sm sm:space-x-4">
+
+                  <li><a href="#" data-tab="all" onclick="showTab('all', event)" class="hover:text-gray-200">all</a></li>
+                  <li><a href="#" data-tab="cars" onclick="showTab('cars', event)" class="hover:text-gray-200">Cars</a></li>
+                  <li><a href="#" data-tab="electric-cars" onclick="showTab('electric-cars', event)" class="hover:text-gray-200">Electric cars</a></li>
+                  <li><a href="#" data-tab="features" onclick="showTab('features', event)" class="hover:text-gray-200">Features</a></li>
+                  <li><a href="#" data-tab="gadget" onclick="showTab('gadget', event)" class="hover:text-gray-200">Gadget</a></li>
+                  <li><a href="#" data-tab="smart-tvs" onclick="showTab('smart-tvs', event)" class="hover:text-gray-200">Smart TVs</a></li>
+                  <li><a href="#" data-tab="more" onclick="showTab('more', event)" class="hover:text-gray-200">More</a></li>
+                </ul>
+    
+                
+            </nav>
+    
+            <!-- Tab Content Sections -->
+            <!--the all opt from the tab-->
+            <div class="mt-8 w-full ">
+              <div id="all" class="tab-content block">
+                  <div class="w-full mt-10 mb-5  hidden lg:flex  justify-between">
+                      <div class="w-[100%] gap-6 flex justify-between">
+                          <div class="w-[55%] h-[80vh]">
+                              <div class="h-[50%] bg-blue-600">
+                              </div>
+                              <h1 class="py-2">The Top 9 All-Electric Vechile of 2019</h1>
+                      <p class="py-2 font-bold">Amr Ali ibrahim<span class="font-normal px-2">April 05, 2019</span></p>
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                          Atque nostrum necessitatibus accusantium, quidem
+                          nulla praesentium in dicta possimus quis pariatur 
+                          placeat nihil mollitia qui cumque velit..</p>
+                          <div class=" flex mt-8 flex-row gap-2">
+                              <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
+                                  <i class="fa-solid fa-caret-left"></i>
+                              </div>
+                              <div class="border border-gray-200 text-red-500 p-1 h-fit flex justify-center items-center">
+                                  <i class="fa-solid fa-caret-right"></i>
+                              </div>
+                              </div>
+                      </div>
+
+                      <div class="w-[40%] h-[80vh]">
+                          <div class="flex justify-between gap-2 mb-4">
+                              <div class="bg-blue-600 h-20 w-60"></div>
+                              <div class="text-center">
+                                  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                      Nam odit consectetur consequuntur voluptatum quisquam, 
+                                      </h1>
+                              </div>
+                          </div>
+      
+                          <div class="flex justify-between gap-2 mb-4">
+                              <div class="bg-blue-600 h-20 w-60"></div>
+                              <div class="text-center">
+                                  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                      Nam odit consectetur consequuntur voluptatum quisquam, 
+                                      </h1>
+                              </div>
+                          </div>
+      
+                          <div class="flex justify-between gap-2 mb-4">
+                              <div class="bg-blue-600 h-20 w-60"></div>
+                              <div class="text-center">
+                                  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                      Nam odit consectetur consequuntur voluptatum quisquam, 
+                                      </h1>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                      </div>
+                  </div>
+              </div>
+              <div id="cars" class="tab-content">
+                <h2 class="text-xl font-bold">Cars Content</h2>
+                <p>This is the content for the "Cars" section.</p>
+              </div>
+              <div id="electric-cars" class="tab-content">
+                <h2 class="text-xl font-bold">Electric Cars Content</h2>
+                <p>This is the content for the "Electric Cars" section.</p>
+              </div>
+              <div id="features" class="tab-content">
+                <h2 class="text-xl font-bold">Features Content</h2>
+                <p>This is the content for the "Features" section.</p>
+              </div>
+              <div id="gadget" class="tab-content">
+                <h2 class="text-xl font-bold">Gadget Content</h2>
+                <p>This is the content for the "Gadget" section.</p>
+              </div>
+              <div id="smart-tvs" class="tab-content">
+                <h2 class="text-xl font-bold">Smart TVs Content</h2>
+                <p>This is the content for the "Smart TVs" section.</p>
+              </div>
+              <div id="more" class="tab-content">
+                <h2 class="text-xl font-bold">More Content</h2>
+                <p>This is the content for' the "More" section.</p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-[30%] ">
+              <div class="w-full h-10 border border-black-2 p-2 flex justify-between">
+                  <div class="flex gap-2 ">
+                  <i class="fa-brands fa-facebook"></i>
+                  <div class="h-6 w-0.5 bg-black"></div>
+                  <div>2 Fans</div>
+                  </div>
+                  <div class="flex gap-2">
+                  <div class="h-6 w-0.5 bg-black"></div>
+                  <p>like</p>
+                  </div>
+              </div>
+
+
+              <div class="mt-10">
+                  <p class="text-center">-Advertisment-</p>
+                  <div class="w-full h-[40vh]  relative bg-red-500">
+                  </div>
+              </div>
+
+              
+          </div>
+          </div>
+    
         
-        // Toggle between bars and X icons
-        if (mobileMenu.classList.contains("hidden")) {
-          menuIcon.classList.remove("fa-xmark");
-          menuIcon.classList.add("fa-bars");
-        } else {
-          menuIcon.classList.remove("fa-bars");
-          menuIcon.classList.add("fa-xmark");
-        }
-      });
-    </script>
-  </header>
-  
-  <!--the homepage -->
-<section class="w-[90%]">
-<div class="flex justify-between py-8 px-2 border-t ">
-    <div class="text-3l  flex flex-col lg:flex-row">
-    <div class=" bg-black text-white p-2 w-fit">trending now</div>
-    <p class="p-2">the top 9 of All-electric Vechile of 2019</p>
-    </div>
-    <div class=" flex flex-row gap-2">
-        <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
-            <i class="fa-solid fa-caret-left"></i>
+          </div>
         </div>
-        <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
-            <i class="fa-solid fa-caret-right"></i>
-        </div>
-    </div>
-</div>
+    </section>
+           
 
-<div class="">
-    <!--four boxes on the main pages this section is for lg screen only  -->
-    <div class="hidden lg:flex w-[100%] h-[70vh] gap-1">
-
-        <!--the first box on the main page -->
-        <div class="w-[50%] flex flex-col">
-         <div class="h-[60%] bg-blue-600">
-            
-         </div>
-         <div class="h-[40%] bg-gray-300 flex flex-col p-4 flex justify-center">
-            <div class=" bg-black text-white p-2 w-fit uppercase text-[10px]"> Social networking</div>
-            <h1>Facebook announces dating features similar to Tinder</h1>
-            <p>Amr Ali ibrahim</p>
-            <p>April 05, 2019</p>
-         </div>
-       </div>
-        <div class="w-[50%] flex flex-col gap-1 ">
-            <div class="h-[50%]  relative bg-[url('../Assets/1.jpg')] bg-cover bg-center">
-
-            </div>
-            <div class="h-[50%] flex flex-row gap-1">
-              <div class="w-[50%]  relative bg-[url('../Assets/1.jpg')] bg-cover bg-center" ></div>
-              <div class="w-[50%]  relative bg-[url('../Assets/2.jpg')] bg-cover bg-center" ></div>
-            </div>
-        </div> 
-    </div>
-
-
-       <!--this style is for md and sm screen-->
-       <div class="flex lg:hidden flex-col w-full h-screen gap-2">
-        <!-- First Box -->
-        <div class="h-[35%] bg-blue-600">
-            <div class="h-[30%] bg-blue-600"></div>
-            <div class="h-[70%] bg-gray-300 flex flex-col p-4 justify-center">
-                <div class="bg-black text-white p-2 w-fit uppercase text-[10px]"> Social networking</div>
-                <h1>Facebook announces dating features similar to Tinder</h1>
-                <p>Amr Ali Ibrahim</p>
-                <p>April 05, 2019</p>
-            </div>
-        </div>
-    
-        <!-- Second Box -->
-        <div class="h-[21.6%] bg-cover bg-center bg-[url('../Assets/2.jpg')]"></div>
-    
-        <!-- Third Box -->
-        <div class="h-[21.6%] bg-cover bg-center bg-[url('../Assets/1.jpg')]"></div>
-    
-        <!-- Fourth Box -->
-        <div class="h-[21.6%] bg-cover bg-center bg-[url('../Assets/2.jpg')]"></div>
-    </div>
-    </div>
-     </section>
-
-        
- <!-- Blog Post Section -->
- <section class="mt-5 w-[90%] ">
-    <!-- Black link on the top of this section -->
-    <!-- LG Screen Post -->
-    <div class="hidden lg:flex gap-1">
-      <div class="h-2 w-[50%] bg-black"></div>
-      <div class="h-2 w-[30%] bg-black"></div>
-      <div class="h-2 w-[20%] bg-black"></div>
-    </div>
-    <!-- MD and SM Screen -->
-    <div class="flex lg:hidden gap-1">
-      <div class="h-2 w-[50%] bg-black"></div>
-      <div class="h-2 w-[50%] bg-black"></div>
-    </div>
-
-    <!-- Blog Post -->
-    <!-- Blog Post -->
-    <div class="w-full flex flex-col lg:flex-row justify-between mt-8">
-        <div class="w-full lg:w-[60%]">
+    <!--the  lifestyle news with the tab and nav-->
+    <section class="flex flex-col lg:flex-row w-[90%] justify-between">
+      <div class="w-full lg:w-[60%] flex flex-col  lg:flex-row justify-between mt-8">
+        <div class="w-full">
           <nav>
-            <div class="container mx-auto border-b-2 border-orange-500 flex justify-between items-center">
+            <div class="container mx-auto border-b-2 border-green-500 flex justify-between items-center">
               <!-- Logo -->
-              <a href="#" class="text-white bg-orange-500 py-2 px-4 uppercase">don't miss</a>
-  
+              <a href="#" class="text-white bg-green-500 py-2 px-4 uppercase">lifestle news</a>
+              
               <!-- Navigation Links (Tabs) -->
-              <ul class="hidden lg:flex lg:space-x-4">
-                <li><a href="#" data-tab="all" onclick="showTab('all', event)" class="hover:text-gray-200">all</a></li>
-                <li><a href="#" data-tab="cars" onclick="showTab('cars', event)" class="hover:text-gray-200">Cars</a></li>
-                <li><a href="#" data-tab="electric-cars" onclick="showTab('electric-cars', event)" class="hover:text-gray-200">Electric cars</a></li>
-                <li><a href="#" data-tab="features" onclick="showTab('features', event)" class="hover:text-gray-200">Features</a></li>
-                <li><a href="#" data-tab="gadget" onclick="showTab('gadget', event)" class="hover:text-gray-200">Gadget</a></li>
-                <li><a href="#" data-tab="smart-tvs" onclick="showTab('smart-tvs', event)" class="hover:text-gray-200">Smart TVs</a></li>
-                <li><a href="#" data-tab="more" onclick="showTab('more', event)" class="hover:text-gray-200">More</a></li>
-              </ul>
-  
-              <!-- Mobile Menu Button -->
-              <button id="mobile-menu-button" class="lg:hidden p-2 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-              </button>
-            </div>
-  
-            <!-- Mobile Menu (Hidden by Default) -->
-            <div id="mobile-menu" class="lg:hidden hidden mt-4">
-              <ul class="hidden lg:flex lg:space-x-4">
-                <li><a href="#" data-tab="all123" onclick="showTab123('all123', event)" class="hover:text-gray-200">all</a></li>
-                <li><a href="#" data-tab="cars123" onclick="showTab123('cars123', event)" class="hover:text-gray-200">Cars</a></li>
-                <li><a href="#" data-tab="electric-cars123" onclick="showTab123('electric-cars123', event)" class="hover:text-gray-200">Electric cars</a></li>
-                <li><a href="#" data-tab="features123" onclick="showTab123('features123', event)" class="hover:text-gray-200">Features</a></li>
-                <li><a href="#" data-tab="gadget123" onclick="showTab123('gadget123', event)" class="hover:text-gray-200">Gadget</a></li>
-                <li><a href="#" data-tab="smart-tvs123" onclick="showTab123('smart-tvs123', event)" class="hover:text-gray-200">Smart TVs</a></li>
-                <li><a href="#" data-tab="more123" onclick="showTab123('more123', event)" class="hover:text-gray-200">More</a></li>
+            
+                <ul class="flex flex-wrap space-x-2 text-sm sm:space-x-4">
+
+                <li><a href="#" onclick="showTab123('all123', event)" class="hover:text-gray-200">all</a></li>
+                <li><a href="#" onclick="showTab123('cars123', event)" class="hover:text-gray-200">Cars</a></li>
+                <li><a href="#" onclick="showTab123('electric-cars123', event)" class="hover:text-gray-200">Electric cars</a></li>
+                <li><a href="#" onclick="showTab123('features123', event)" class="hover:text-gray-200">Features</a></li>
+                <li><a href="#" onclick="showTab123('gadget123', event)" class="hover:text-gray-200">Gadget</a></li>
+                <li><a href="#" onclick="showTab123('smart-tvs123', event)" class="hover:text-gray-200">Smart TVs</a></li>
+                <li><a href="#" onclick="showTab123('more123', event)" class="hover:text-gray-200">More</a></li>
               </ul>
             </div>
           </nav>
-  
-          <!-- Tab Content Sections -->
-           <!--the all opt from the tab-->
-          <div class="mt-8 w-full ">
-            <div id="all" class="tab-content block">
-                <div class="w-full mt-10 mb-5  hidden lg:flex  justify-between">
-                    <div class="w-[100%] gap-6 flex justify-between">
-                        <div class="w-[55%] h-[80vh]">
-                            <div class="h-[50%] bg-blue-600">
-                            </div>
-                            <h1 class="py-2">The Top 9 All-Electric Vechile of 2019</h1>
-                    <p class="py-2 font-bold">Amr Ali ibrahim<span class="font-normal px-2">April 05, 2019</span></p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                        Atque nostrum necessitatibus accusantium, quidem
-                         nulla praesentium in dicta possimus quis pariatur 
-                        placeat nihil mollitia qui cumque velit..</p>
-                        <div class=" flex mt-8 flex-row gap-2">
-                            <div class="border border-gray-200 p-1 h-fit flex justify-center items-center">
-                                <i class="fa-solid fa-caret-left"></i>
-                            </div>
-                            <div class="border border-gray-200 text-red-500 p-1 h-fit flex justify-center items-center">
-                                <i class="fa-solid fa-caret-right"></i>
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="w-[40%] h-[80vh]">
-                        <div class="flex justify-between gap-2 mb-4">
-                            <div class="bg-blue-600 h-20 w-60"></div>
-                            <div class="text-center">
-                                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                    Nam odit consectetur consequuntur voluptatum quisquam, 
-                                    </h1>
-                            </div>
-                        </div>
-    
-                        <div class="flex justify-between gap-2 mb-4">
-                            <div class="bg-blue-600 h-20 w-60"></div>
-                            <div class="text-center">
-                                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                    Nam odit consectetur consequuntur voluptatum quisquam, 
-                                    </h1>
-                            </div>
-                        </div>
-    
-                        <div class="flex justify-between gap-2 mb-4">
-                            <div class="bg-blue-600 h-20 w-60"></div>
-                            <div class="text-center">
-                                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                    Nam odit consectetur consequuntur voluptatum quisquam, 
-                                    </h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    </div>
-                </div>
-            </div>
-            <div id="cars" class="tab-content">
-              <h2 class="text-xl font-bold">Cars Content</h2>
-              <p>This is the content for the "Cars" section.</p>
-            </div>
-            <div id="electric-cars" class="tab-content">
-              <h2 class="text-xl font-bold">Electric Cars Content</h2>
-              <p>This is the content for the "Electric Cars" section.</p>
-            </div>
-            <div id="features" class="tab-content">
-              <h2 class="text-xl font-bold">Features Content</h2>
-              <p>This is the content for the "Features" section.</p>
-            </div>
-            <div id="gadget" class="tab-content">
-              <h2 class="text-xl font-bold">Gadget Content</h2>
-              <p>This is the content for the "Gadget" section.</p>
-            </div>
-            <div id="smart-tvs" class="tab-content">
-              <h2 class="text-xl font-bold">Smart TVs Content</h2>
-              <p>This is the content for the "Smart TVs" section.</p>
-            </div>
-            <div id="more" class="tab-content">
-              <h2 class="text-xl font-bold">More Content</h2>
-              <p>This is the content for' the "More" section.</p>
-            </div>
-          </div>
-
-          <div class="w-full lg:w-[30%] ">
-            <div class="w-full h-10 border border-black-2 p-2 flex justify-between">
-                <div class="flex gap-2 ">
-                 <i class="fa-brands fa-facebook"></i>
-                 <div class="h-6 w-0.5 bg-black"></div>
-                 <div>2 Fans</div>
-                </div>
-                <div class="flex gap-2">
-                 <div class="h-6 w-0.5 bg-black"></div>
-                 <p>like</p>
-                </div>
-             </div>
-
-
-             <div class="mt-10">
-                 <p class="text-center">-Advertisment-</p>
-                 <div class="w-full h-[40vh]  relative bg-red-500">
-                 </div>
-             </div>
-
-             
-         </div>
-        </div>
-  
-       
-        </div>
-      </div>
-  </section>
-
-
-  <!--the  lifestyle news with the tab and nav-->
-  <section class="flex flex-col lg:flex-row w-[90%] justify-between">
-    <div class="w-full lg:w-[60%] flex flex-col  lg:flex-row justify-between mt-8">
-      <div class="w-full">
-        <nav>
-          <div class="container mx-auto border-b-2 border-green-500 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="text-white bg-green-500 py-2 px-4 uppercase">lifestle news</a>
-    
-            <!-- Navigation Links (Tabs) -->
-            <ul class="hidden lg:flex lg:space-x-4">
-              <li><a href="#" onclick="showTab123('all123', event)" class="hover:text-gray-200">all</a></li>
-              <li><a href="#" onclick="showTab123('cars123', event)" class="hover:text-gray-200">Cars</a></li>
-              <li><a href="#" onclick="showTab123('electric-cars123', event)" class="hover:text-gray-200">Electric cars</a></li>
-              <li><a href="#" onclick="showTab123('features123', event)" class="hover:text-gray-200">Features</a></li>
-              <li><a href="#" onclick="showTab123('gadget123', event)" class="hover:text-gray-200">Gadget</a></li>
-              <li><a href="#" onclick="showTab123('smart-tvs123', event)" class="hover:text-gray-200">Smart TVs</a></li>
-              <li><a href="#" onclick="showTab123('more123', event)" class="hover:text-gray-200">More</a></li>
-            </ul>
-          </div>
-        </nav>
-    
-        <!-- Tab Content Sections of -->
-        <div class="mt-8 w-full">
-          <!--the all content of the lifestyle -->
-          <div id="all123" class="lifestyle-tab-content block">
-           <div class="flex gap-4 flex-row">
-             <div class="w-1/2 flex flex-col">
-              <div class="w-full bg-blue-600 h-60"></div>
-              <h1 class="mt-2 font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Error adipisci, aliquam qui atque porro harum sit .</h1>
-                 <p class="mt-2">Amr Ali Ibrahim<span>April 05, 2019</span></p>
-
-              <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                 Consequatur suscipit fugiat aut, ipsam, iure mollitia, 
-                 repudiandae modi dolorum eligendi cum ?</p>
-
-                 <div class="mt-10 flex flex-row gap-4">
-                  <div class="w-[30%] h-20 bg-gray-300"></div>
-                  <div class="w-[60%]">
-                    <h1 class="font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-                      <p>April 05, 2019</p>
-                  </div>
-                 </div>
-             </div>
-             <div class="w-1/2 flex flex-col">
-              <div class="w-full bg-red-600 h-60"></div>
-              <h1 class="mt-2 font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Error adipisci, aliquam qui atque porro harum sit .</h1>
-                 <p class="mt-2">Amr Ali Ibrahim<span>April 05, 2019</span></p>
-
-              <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                 Consequatur suscipit fugiat aut, ipsam, iure mollitia, 
-                 repudiandae modi dolorum eligendi cum ?</p>
-
-                 <div class="mt-10 flex flex-row gap-4">
-                  <div class="w-[30%] h-20 bg-gray-300"></div>
-                  <div class="w-[60%]">
-                    <h1 class="font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-                      <p>April 05, 2019</p>
-                  </div>
-                 </div>
-             </div>
-           </div>
-          </div>
-          <div id="cars123" class="lifestyle-tab-content">
-            <h2 class="text-xl font-bold">Cars Content</h2>
-            <p>This is the duplicated content for "Cars" section.</p>
-          </div>
-          <div id="electric-cars123" class="lifestyle-tab-content">
-            <h2 class="text-xl font-bold">Electric Cars Content</h2>
-            <p>This is the duplicated content for "Electric Cars" section.</p>
-          </div>
-          <div id="features123" class="lifestyle-tab-content">
-            <h2 class="text-xl font-bold">Electric Cars Content</h2>
-            <p>This is the duplicated content for "Electric Cars" section.</p>
-          </div>
-          <div id="gadget123" class="lifestyle-tab-content">
-            <h2 class="text-xl font-bold">Electric Cars Content</h2>
-            <p>This is the duplicated content for "Electric Cars" section.</p>
-          </div>
-          <div id="smart-tvs123" class="lifestyle-tab-content">
-            <h2 class="text-xl font-bold">Electric Cars Content</h2>
-            <p>This is the duplicated content for "Electric Cars" section.</p>
-          </div>
-          <div id="more123" class="lifestyle-tab-content">
-            <h2 class="text-xl font-bold">Electric Cars Content</h2>
-            <p>This is the duplicated content for "Electric Cars" section.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="w-full lg:w-[30%] ">
-      <div class="w-full mt-10  border-b-2 border-black flex justify-between">
-        <h1 class="py-1 px-4 h-auto w-auto bg-black uppercase text-white">popular post</h1>
-        
-      </div>
-      <!--the four boxes -->
-
-        <div class="flex items-center justify-center  mt-10">
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full ">
-              <div class="bg-blue-500 text-white text-center p-8 h-[20vh] font-bold">1</div>
-              <div class="bg-red-500 text-white text-center p-8 h-[20vh] font-bold">2</div>
-              <div class="bg-green-500 text-white text-center p-8 h-[20vh] font-bold">3</div>
-              <div class="bg-yellow-500 text-white text-center p-8 h-[20vh] font-bold">4</div>
-          </div>
       
+          <!-- Tab Content Sections of -->
+          <div class="mt-8 w-full">
+            <!--the all content of the lifestyle -->
+            
+            <div id="all123" class="lifestyle-tab-content block">
+            <div class="flex gap-4 flex-row">
+              <div class="w-1/2 flex flex-col">
+                <div class="w-full bg-blue-600 h-60"></div>
+                <h1 class="mt-2 font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Error adipisci, aliquam qui atque porro harum sit .</h1>
+                  <p class="mt-2">Amr Ali Ibrahim<span>April 05, 2019</span></p>
+
+                <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Consequatur suscipit fugiat aut, ipsam, iure mollitia, 
+                  repudiandae modi dolorum eligendi cum ?</p>
+
+                  <div class="mt-10 flex flex-row gap-4">
+                    <div class="w-[30%] h-20 bg-gray-300"></div>
+                    <div class="w-[60%]">
+                      <h1 class="font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                        <p>April 05, 2019</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="w-1/2 flex flex-col">
+                <div class="w-full bg-red-600 h-60"></div>
+                <h1 class="mt-2 font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Error adipisci, aliquam qui atque porro harum sit .</h1>
+                  <p class="mt-2">Amr Ali Ibrahim<span>April 05, 2019</span></p>
+
+                <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Consequatur suscipit fugiat aut, ipsam, iure mollitia, 
+                  repudiandae modi dolorum eligendi cum ?</p>
+
+                  <div class="mt-10 flex flex-row gap-4">
+                    <div class="w-[30%] h-20 bg-gray-300"></div>
+                    <div class="w-[60%]">
+                      <h1 class="font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                        <p>April 05, 2019</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            </div>
+            <div id="cars123" class="lifestyle-tab-content">
+              <h2 class="text-xl font-bold">Cars Content</h2>
+              <p>This is the duplicated content for "Cars" section.</p>
+            </div>
+            <div id="electric-cars123" class="lifestyle-tab-content">
+              <h2 class="text-xl font-bold">Electric Cars Content</h2>
+              <p>This is the duplicated content for "Electric Cars" section.</p>
+            </div>
+            <div id="features123" class="lifestyle-tab-content">
+              <h2 class="text-xl font-bold">Electric Cars Content</h2>
+              <p>This is the duplicated content for "Electric Cars" section.</p>
+            </div>
+            <div id="gadget123" class="lifestyle-tab-content">
+              <h2 class="text-xl font-bold">Electric Cars Content</h2>
+              <p>This is the duplicated content for "Electric Cars" section.</p>
+            </div>
+            <div id="smart-tvs123" class="lifestyle-tab-content">
+              <h2 class="text-xl font-bold">Electric Cars Content</h2>
+              <p>This is the duplicated content for "Electric Cars" section.</p>
+            </div>
+            <div id="more123" class="lifestyle-tab-content">
+              <h2 class="text-xl font-bold">Electric Cars Content</h2>
+              <p>This is the duplicated content for "Electric Cars" section.</p>
+            </div>
+          </div>
         </div>
+      </div>
 
-   </div>
+      <div class="w-full lg:w-[30%] ">
+        <div class="w-full mt-10  border-b-2 border-black flex justify-between">
+          <h1 class="py-1 px-4 h-auto w-auto bg-black uppercase text-white">popular post</h1>
+          
+        </div>
+        <!--the four boxes -->
+
+          <div class="flex items-center justify-center  mt-10">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full ">
+                <div class="bg-blue-500 text-white text-center p-8 h-[20vh] font-bold">1</div>
+                <div class="bg-red-500 text-white text-center p-8 h-[20vh] font-bold">2</div>
+                <div class="bg-green-500 text-white text-center p-8 h-[20vh] font-bold">3</div>
+                <div class="bg-yellow-500 text-white text-center p-8 h-[20vh] font-bold">4</div>
+            </div>
+        
+          </div>
+
+    </div>
+      
+  </section>
     
-</section>
-  
 
 
-<!--the footer-->
-<section class="w-full mt-12 bg-black text-white flex flex-col justify-center items-center">
-<div class="w-[90%]  flex flex-col lg:flex-row">
-  <!--the editor picks-->
-  <div class="w-full lg:w-[33.3%] ">
-    <h1 class="uppercase my-4">editor picks</h1>
+  <!--the footer-->
+  <section class="w-full mt-12 bg-black text-white flex flex-col justify-center items-center">
+  <div class="w-[90%]  flex flex-col lg:flex-row">
+    <!--the editor picks-->
+    <div class="w-full lg:w-[33.3%] ">
+      <h1 class="uppercase my-4">editor picks</h1>
+      <div class="flex gap-4 mt-2">
+        <div class="bg-blue-500 h-[5rem] w-[10rem]"></div>
+        <div>
+        <h1>Facebook Announces A Dating Features 
+          similar To Tinder
+        </h1>
+        <p class="text-gray-200 text-[12px]">April 5, 2019</p>
+      </div>
+    </div>
+
     <div class="flex gap-4 mt-2">
-      <div class="bg-blue-500 h-[5rem] w-[10rem]"></div>
+      <div class="bg-green-500 h-[5rem] w-[10rem]"></div>
       <div>
       <h1>Facebook Announces A Dating Features 
         similar To Tinder
@@ -469,31 +464,31 @@
   </div>
 
   <div class="flex gap-4 mt-2">
-    <div class="bg-green-500 h-[5rem] w-[10rem]"></div>
+    <div class="bg-red-500 h-[5rem] w-[10rem]"></div>
     <div>
     <h1>Facebook Announces A Dating Features 
       similar To Tinder
     </h1>
     <p class="text-gray-200 text-[12px]">April 5, 2019</p>
   </div>
-</div>
-
-<div class="flex gap-4 mt-2">
-  <div class="bg-red-500 h-[5rem] w-[10rem]"></div>
-  <div>
-  <h1>Facebook Announces A Dating Features 
-    similar To Tinder
-  </h1>
-  <p class="text-gray-200 text-[12px]">April 5, 2019</p>
-</div>
-</div>
   </div>
+    </div>
 
 
-  <div class="w-full lg:w-[33.3%] ">
-    <h1 class="uppercase my-4">popular post</h1>
+    <div class="w-full lg:w-[33.3%] ">
+      <h1 class="uppercase my-4">popular post</h1>
+      <div class="flex gap-4 mt-2">
+        <div class="bg-yellow-500 h-[5rem] w-[10rem]"></div>
+        <div>
+        <h1>Facebook Announces A Dating Features 
+          similar To Tinder
+        </h1>
+        <p class="text-gray-200 text-[12px]">April 5, 2019</p>
+      </div>
+    </div>
+
     <div class="flex gap-4 mt-2">
-      <div class="bg-yellow-500 h-[5rem] w-[10rem]"></div>
+      <div class="bg-white h-[5rem] w-[10rem]"></div>
       <div>
       <h1>Facebook Announces A Dating Features 
         similar To Tinder
@@ -503,140 +498,130 @@
   </div>
 
   <div class="flex gap-4 mt-2">
-    <div class="bg-white h-[5rem] w-[10rem]"></div>
+    <div class="bg-purple-500 h-[5rem] w-[10rem]"></div>
     <div>
     <h1>Facebook Announces A Dating Features 
       similar To Tinder
     </h1>
     <p class="text-gray-200 text-[12px]">April 5, 2019</p>
   </div>
-</div>
-
-<div class="flex gap-4 mt-2">
-  <div class="bg-purple-500 h-[5rem] w-[10rem]"></div>
-  <div>
-  <h1>Facebook Announces A Dating Features 
-    similar To Tinder
-  </h1>
-  <p class="text-gray-200 text-[12px]">April 5, 2019</p>
-</div>
-</div>
   </div>
-  
+    </div>
+    
 
-  <div class="w-full lg:w-[33.3%] ">
-    <h1 class="uppercase my-4">popular category</h1>
+    <div class="w-full lg:w-[33.3%] ">
+      <h1 class="uppercase my-4">popular category</h1>
 
-    <ul class="">
-      <li class="flex justify-between items-center p-1 ">
-          <span class="">Social Networking</span>
+      <ul class="">
+        <li class="flex justify-between items-center p-1 ">
+            <span class="">Social Networking</span>
+            <span class=" px-3 py-1 ">1</span>
+        </li>
+        <li class="flex justify-between items-center p-1 ">
+          <span class="">Smart Tvs</span>
           <span class=" px-3 py-1 ">1</span>
       </li>
       <li class="flex justify-between items-center p-1 ">
-        <span class="">Smart Tvs</span>
+        <span class="">Cars</span>
         <span class=" px-3 py-1 ">1</span>
     </li>
     <li class="flex justify-between items-center p-1 ">
-      <span class="">Cars</span>
+      <span class="">Website</span>
       <span class=" px-3 py-1 ">1</span>
   </li>
   <li class="flex justify-between items-center p-1 ">
-    <span class="">Website</span>
+    <span class="">Wearables & Smart Watches</span>
     <span class=" px-3 py-1 ">1</span>
-</li>
-<li class="flex justify-between items-center p-1 ">
-  <span class="">Wearables & Smart Watches</span>
-  <span class=" px-3 py-1 ">1</span>
-</li>
-<li class="flex justify-between items-center p-1 ">
-  <span class="">Electric Cars</span>
-  <span class=" px-3 py-1 ">1</span>
-</li>
-<li class="flex justify-between items-center p-1 ">
-  <span class="">Gadgets</span>
-  <span class=" px-3 py-1 ">1</span>
-</li>
-<li class="flex justify-between items-center p-1 ">
-  <span class="">E-commerce</span>
-  <span class=" px-3 py-1 ">0</span>
-</li>
-  </ul>
-  </div>
+  </li>
+  <li class="flex justify-between items-center p-1 ">
+    <span class="">Electric Cars</span>
+    <span class=" px-3 py-1 ">1</span>
+  </li>
+  <li class="flex justify-between items-center p-1 ">
+    <span class="">Gadgets</span>
+    <span class=" px-3 py-1 ">1</span>
+  </li>
+  <li class="flex justify-between items-center p-1 ">
+    <span class="">E-commerce</span>
+    <span class=" px-3 py-1 ">0</span>
+  </li>
+    </ul>
+    </div>
 
-  </div>
-<!--the white line-->
-<div class="bg-white h-1 w-[90%] mt-10 mb-5"></div>
+    </div>
+  <!--the white line-->
+  <div class="bg-white h-1 w-[90%] mt-10 mb-5"></div>
 
-  <!--the section after the white line -->
-  <div class="w-[90%] flex flex-col lg:flex-row">
+    <!--the section after the white line -->
+    <div class="w-[90%] flex flex-col lg:flex-row">
+      <div class="w-full lg:w-[33.3%] ">
+      <h1 class="text-xl sm:mb-10 lg:mt-8 ">
+        Tech <span class="font-bold text-green-400">TD</span> Daily
+      </h1>0
+    </div>
+
     <div class="w-full lg:w-[33.3%] ">
-    <h1 class="text-xl sm:mb-10 lg:mt-8 ">
-      Tech <span class="font-bold text-green-400">TD</span> Daily
-    </h1>
-   </div>
+    <h1 class="uppercase">about us</h1>
+    <p class="mt-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.  
+      repellat esse ab earum veniam, deserunt 
+      accusantium dolorem incidunt quisquam iusto quis porro.
+    Assumenda alias harum doloribus bl</p>
+    </div>
 
-   <div class="w-full lg:w-[33.3%] ">
-   <h1 class="uppercase">about us</h1>
-   <p class="mt-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.  
-    repellat esse ab earum veniam, deserunt 
-    accusantium dolorem incidunt quisquam iusto quis porro.
-   Assumenda alias harum doloribus bl</p>
-   </div>
+    <div class="w-full lg:w-[33.3%] ">
+      <h1>follow us</h1>
 
-   <div class="w-full lg:w-[33.3%] ">
-    <h1>follow us</h1>
+      <i class="fa-brands fa-facebook-f"></i>
+    </div>
+    </div>
+  </section>
 
-    <i class="fa-brands fa-facebook-f"></i>
-   </div>
-  </div>
-</section>
+  </section>
 
-</section>
-
-    
+      
 
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-// Function to show/hide tabs for the main blog post section
-function showTab(tabId, event) {
-  event.preventDefault();
-  // Hide all tab contents
-  document.querySelectorAll('.tab-content').forEach(tab => {
-    tab.classList.remove('block');
-    tab.classList.add('hidden');
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  // Function to show/hide tabs for the main blog post section
+  function showTab(tabId, event) {
+    event.preventDefault();
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+      tab.classList.remove('block');
+      tab.classList.add('hidden');
+    });
+    // Show the selected tab content
+    document.getElementById(tabId).classList.remove('hidden');
+    document.getElementById(tabId).classList.add('block');
+  }
+
+  // Function to show/hide tabs for the lifestyle news section
+  function showTab123(tabId, event) {
+    event.preventDefault();
+    // Hide all lifestyle tab contents
+    document.querySelectorAll('.lifestyle-tab-content').forEach(tab => {
+      tab.classList.remove('block');
+      tab.classList.add('hidden');
+    });
+    // Show the selected lifestyle tab content
+    document.getElementById(tabId).classList.remove('hidden');
+    document.getElementById(tabId).classList.add('block');
+  }
+
+  // Add event listeners for the main blog post section tabs
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+      const tabId = this.getAttribute('data-tab');
+      showTab(tabId, event);
+    });
   });
-  // Show the selected tab content
-  document.getElementById(tabId).classList.remove('hidden');
-  document.getElementById(tabId).classList.add('block');
-}
 
-// Function to show/hide tabs for the lifestyle news section
-function showTab123(tabId, event) {
-  event.preventDefault();
-  // Hide all lifestyle tab contents
-  document.querySelectorAll('.lifestyle-tab-content').forEach(tab => {
-    tab.classList.remove('block');
-    tab.classList.add('hidden');
+  // Add event listeners for the lifestyle news section tabs
+  document.querySelectorAll('.lifestyle-tab-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+      const tabId = this.getAttribute('data-tab');
+      showTab123(tabId, event);
+    });
   });
-  // Show the selected lifestyle tab content
-  document.getElementById(tabId).classList.remove('hidden');
-  document.getElementById(tabId).classList.add('block');
-}
-
-// Add event listeners for the main blog post section tabs
-document.querySelectorAll('.tab-button').forEach(button => {
-  button.addEventListener('click', function(event) {
-    const tabId = this.getAttribute('data-tab');
-    showTab(tabId, event);
-  });
-});
-
-// Add event listeners for the lifestyle news section tabs
-document.querySelectorAll('.lifestyle-tab-button').forEach(button => {
-  button.addEventListener('click', function(event) {
-    const tabId = this.getAttribute('data-tab');
-    showTab123(tabId, event);
-  });
-});
-</script>
+  </script>
