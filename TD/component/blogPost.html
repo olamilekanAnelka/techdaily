@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>CenturyHub</title>
+</head>
+<body>
+
+<section class=" flex flex-col items-center">
+  <div class="w-[95%] py-4 shadow relative">
+    <!-- Navbar -->
+    <nav class="flex items-center justify-center relative">
+      <!-- Logo -->
+      <a href="#" class="absolute left-4 top-1/2 -translate-y-1/2 uppercase text-2xl font-bold">CenturyHub</a>
+
+      <!-- Desktop Links (centered) -->
+      <ul id="nav-links" class="hidden md:flex flex-wrap gap-4 text-sm">
+        <li><a href="#" class="hover:underline">Security</a></li>
+        <li><a href="#" class="hover:underline">Policies</a></li>
+        <li><a href="#" class="hover:underline">The Big Story</a></li>
+        <li><a href="#" class="hover:underline">Business</a></li>
+        <li><a href="#" class="hover:underline">Science</a></li>
+        <li><a href="#" class="hover:underline">Culture</a></li>
+        <li><a href="#" class="hover:underline">Ideas</a></li>
+        <li><a href="#" class="hover:underline">Merch</a></li>
+        <li><a href="#" class="hover:underline">Reviews</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button id="menu-btn" class="absolute right-4 top-1/2 -translate-y-1/2 focus:outline-none z-50" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Toggleable Menu (visible on all screens when toggled) -->
+    <div id="mobile-menu" class="hidden mt-4">
+      <ul class="flex flex-col gap-4 text-sm">
+        <li><a href="#" class="hover:underline">Security</a></li>
+        <li><a href="#" class="hover:underline">Policies</a></li>
+        <li><a href="#" class="hover:underline">The Big Story</a></li>
+        <li><a href="#" class="hover:underline">Business</a></li>
+        <li><a href="#" class="hover:underline">Science</a></li>
+        <li><a href="#" class="hover:underline">Culture</a></li>
+        <li><a href="#" class="hover:underline">Ideas</a></li>
+        <li><a href="#" class="hover:underline">Merch</a></li>
+        <li><a href="#" class="hover:underline">Reviews</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!--the ad -->
+  <div class="w-full h-[20rem] bg-gray-300">
+
+  </div>
+   <!--the gadget logo-->
+  <div class="flex items-center w-full lg:mx-4 my-8">
+    <hr class="flex-grow border-t border-blue-600 " />
+    <span class="px-4 text-center bg-blue-600 h-10 flex items-center text-white uppercase font-semibold">Gadget</span>
+    <hr class="flex-grow border-t border-blue-600 " />
+  </div>
+
+  <!--the blog post-->
+  <div class="w-[95%] flex flex-col justify-center">
+    <h1 class="text-2xl font-bold">
+        Live Updates From Google I/O 2025
+        <span class="inline-block w-6 h-6 bg-red-500 mb-2 border-black border rounded-full align-middle ml-2"></span>
+      </h1>
+          
+    <p>Follow along with the Gizmodo crew as we
+         unpack everything Google announces at its annual
+         developer conference in Mountain View, Calif.</p>
+
+         <!--the divide part-->
+  <div class=" h-auto w-full flex flex-row">
+    <div class="w-[70%] h-10 border-r-2 border-r-gray-300"></div>
+    <div class="w-[30%] h-10 "></div>
+  </div>
+  </div>
+
+  
+  
+</section>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+</body>
+</html>
